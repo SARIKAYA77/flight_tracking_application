@@ -26,12 +26,13 @@ Open your terminal and follow the below steps :
   ```change directory
   $ cd airport
   ```
-- Next create a virtual environment and install the dependencies.
+- Next create a virtual environment and install the dependencies
+    ```
+    $ virtualenv venv
+    $ source venv/bin/activate
+    $ pip install -r requirements.txt 
 
-    virtualenv venv
-    source venv/bin/activate
-    pip install -r requirements.txt 
-
+    ```
 
 - Get the server running
 
