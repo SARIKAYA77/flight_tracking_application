@@ -23,17 +23,28 @@ from rest_framework_swagger.views import get_swagger_view
 API_TITLE = "Flight Tracking"
 
 router = routers.DefaultRouter()
-router.register(r'airports', views.AirportViewSet,'airports')
-router.register(r'flights', views.FlightViewSet,'flights')
-router.register(r'count',views.CountViewSet,'count')
+router.register(r'airports', views.AirportViewSet, 'airports')
+router.register(r'flights', views.FlightViewSet, 'flights')
+router.register(r'count', views.CountViewSet, 'count')
 
 schema_view = get_swagger_view(title=API_TITLE)
 
 # Wire up our API using automatic URL routing.
 # Additionally, we include login URLs for the browsable API.
 urlpatterns = [
-    path('', include(router.urls)),
-    path('api-auth/', include('rest_framework.urls', namespace='rest_framework')),
-    path('admin/', admin.site.urls),
-    path("docs/",schema_view),
+    path(
+        '',
+        include(
+            router.urls)),
+    path(
+        'api-auth/',
+        include(
+            'rest_framework.urls',
+            namespace='rest_framework')),
+    path(
+        'admin/',
+        admin.site.urls),
+    path(
+        "docs/",
+        schema_view),
 ]
