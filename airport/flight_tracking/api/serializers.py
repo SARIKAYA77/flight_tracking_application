@@ -28,6 +28,7 @@ class FlightSerializer(serializers.ModelSerializer):
 class CountSerializer(serializers.ModelSerializer):
     class Meta:
         model = Flight
+        lookup_field='flight_number'
         fields = "__all__"
     
     def to_representation(self,obj):

@@ -22,3 +22,4 @@ class CountViewSet(viewsets.ModelViewSet):
     """ API endpoint that allows count flights to be viewed """
     queryset = Flight.objects.all()
     serializer_class = CountSerializer
+    lookup_field='flight_number'
