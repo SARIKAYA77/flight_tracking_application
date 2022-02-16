@@ -8,7 +8,7 @@ This is a simple application with you can add, delete, update your flights and v
 
     ```
     $ start-engine docker
-    $ docker run" from terminal
+    $ "docker run" from terminal
     $ docker-compose up
 
     ```
