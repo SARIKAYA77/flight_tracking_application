@@ -2,6 +2,14 @@ from rest_framework import viewsets
 from .serializers import AirportSerializer, CountSerializer, FlightSerializer
 from .models import Airport, Flight
 
+def getdistinct(queryset):
+    flights=[]
+    values = []
+    for query in queryset:
+        if not query.flight_number in flights:
+            flights.append(query.flight_number)
+            values.append(query) 
+    return values
 
 class AirportViewSet(viewsets.ModelViewSet):
     """
@@ -21,6 +29,6 @@ class FlightViewSet(viewsets.ModelViewSet):
 
 class CountViewSet(viewsets.ModelViewSet):
     """ API endpoint that allows count flights to be viewed """
-    queryset = Flight.objects.all()
+    queryset= getdistinct(Flight.objects.all())
     serializer_class = CountSerializer
     lookup_field = 'flight_number'
